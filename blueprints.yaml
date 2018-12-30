@@ -1,0 +1,35 @@
+name: Url Shortener
+version: 0.1.0
+description: Shorten urls with page ids
+icon: plug
+author:
+  name: Samy NASTUZZI
+  email: samy@nastuzzi.fr
+homepage: https://github.com/NastuzziSamy/grav-plugin-url-shortener
+demo: https://github.com/NastuzziSamy/grav-plugin-url-shortener
+keywords: grav, plugin, etc
+bugs: https://github.com/NastuzziSamy/grav-plugin-url-shortener/issues
+docs: https://github.com/NastuzziSamy/grav-plugin-url-shortener/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    uri:
+      type: text
+      label: PLUGIN_URL_SHORTENER.URI_VARIABLE
+      help: PLUGIN_URL_SHORTENER.URI_VARIABLE_HELP
+    length:
+      type: integer
+      label: PLUGIN_URL_SHORTENER.LENGTH_VARIABLE
+      help: PLUGIN_URL_SHORTENER.LENGTH_VARIABLE_HELP

@@ -1,0 +1,13 @@
+en:
+  PLUGIN_URL_SHORTENER:
+    URI_VARIABLE: URI
+    URI_VARIABLE_HELP: Prefix for shorten url
+    LENGTH_VARIABLE: Length
+    LENGTH_VARIABLE_HELP: Identifier length (max: 32). Number of shorten urls possibility: 64^n
+
+fr:
+  PLUGIN_URL_SHORTENER:
+    URI_VARIABLE: URI
+    URI_VARIABLE_HELP: Préfix des urls raccourcies
+    LENGTH_VARIABLE: Longueur
+    LENGTH_VARIABLE_HELP: Taille de l'identifiant (max: 32). Nombre d'urls raccourcies possibles: 64^n
