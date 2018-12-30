@@ -1,5 +1,10 @@
+# v0.2.1
+## 12/30/2018
+
+* Can disable shorten url for a page
+
 # v0.2.0
-## 12/29/2018
+## 12/30/2018
 
 * Auto generation of shorten urls
 

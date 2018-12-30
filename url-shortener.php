@@ -97,12 +97,15 @@ class UrlShortenerPlugin extends Plugin
      * Do some work for this event, full details of events can be found
      * on the learn site: http://learn.getgrav.org/plugins/event-hooks
      *
-     * @param Event $e
+     * @param Event $event
      */
     public function onPageInitialized(Event $event)
     {
         $page = $event['page'];
-        $page->modifyHeader('external_url', $this->buildUrl($page));
+
+        if (($page->header()->shorten_url ?? true) !== false) {
+            $page->modifyHeader('external_url', $this->buildUrl($page));
+        }
     }
 
     /**
