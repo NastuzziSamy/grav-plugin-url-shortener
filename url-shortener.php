@@ -133,6 +133,10 @@ class UrlShortenerPlugin extends Plugin
                     $this->grav->redirect($page->route(), 302);
                 }
             }
+
+            if ($this->config->get('plugins.url-shortener.home_if_wrong')) {
+                $this->grav->redirect($this->grav['uri']->rootUrl(true), 301);
+            }
         }
     }
 }

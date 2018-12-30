@@ -4,6 +4,8 @@ en:
     URI_VARIABLE_HELP: Prefix for shorten url
     LENGTH_VARIABLE: Length
     LENGTH_VARIABLE_HELP: Identifier length (max: 32). Number of shorten urls possibility: 64^n
+    HOME_IF_WRONG_VARIABLE: Home if wrong
+    HOME_IF_WRONG_VARIABLE_HELP: Redirect to home if the shorten url is wrong
 
 fr:
   PLUGIN_URL_SHORTENER:
@@ -11,3 +13,5 @@ fr:
     URI_VARIABLE_HELP: Préfix des urls raccourcies
     LENGTH_VARIABLE: Longueur
     LENGTH_VARIABLE_HELP: Taille de l'identifiant (max: 32). Nombre d'urls raccourcies possibles: 64^n
+    HOME_IF_WRONG_VARIABLE: Retour à l'accueil si mauvais id
+    HOME_IF_WRONG_VARIABLE_HELP: Redirige vers l'accueil si l'identifiant est inconnu

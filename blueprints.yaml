@@ -1,5 +1,5 @@
 name: Url Shortener
-version: 0.2.1
+version: 0.3.0
 description: Shorten urls with page ids
 icon: plug
 author:
@@ -29,7 +29,22 @@ form:
       type: text
       label: PLUGIN_URL_SHORTENER.URI_VARIABLE
       help: PLUGIN_URL_SHORTENER.URI_VARIABLE_HELP
+      validate:
+        type: text
     length:
       type: integer
       label: PLUGIN_URL_SHORTENER.LENGTH_VARIABLE
       help: PLUGIN_URL_SHORTENER.LENGTH_VARIABLE_HELP
+      validate:
+        type: integer
+    home_if_wrong:
+      type: toggle
+      label: PLUGIN_URL_SHORTENER.HOME_IF_WRONG_VARIABLE
+      help: PLUGIN_URL_SHORTENER.HOME_IF_WRONG_VARIABLE_HELP
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

@@ -1,3 +1,8 @@
+# v0.3.0
+## 12/30/2018
+
+* Redirect by default to home if the shorten url is wrong
+
 # v0.2.1
 ## 12/30/2018
 
