@@ -49,6 +49,7 @@ class UrlShortenerPlugin extends Plugin
         // Enable the main event we are interested in
         $this->enable([
             'onPageNotFound' => ['onPageNotFound', 100],
+            'onPageInitialized' => ['onPageInitialized', 100]
         ]);
     }
 
@@ -60,7 +61,8 @@ class UrlShortenerPlugin extends Plugin
         return floor($this->config->get('plugins.url-shortener.length') * 1.5);
     }
 
-    public function getPathId(Page $page) {
+    public function getPathId(Page $page): string
+    {
         return substr($page->id(), -$this->getFromMd5Length());
     }
 
@@ -80,6 +82,27 @@ class UrlShortenerPlugin extends Plugin
         $pathId = bin2hex(base64_decode($shortenerId));
 
         return substr($pathId, 0, $this->getFromMd5Length());
+    }
+
+    public function buildUrl(Page $page): string
+    {
+        $root = $this->grav['uri']->rootUrl(true);
+        $uri = $this->config->get('plugins.url-shortener.uri');
+        $shortenerId = $this->encode($this->getPathId($page));
+
+        return trim($root.'/'.$uri.'/'.$shortenerId, '/');
+    }
+
+    /**
+     * Do some work for this event, full details of events can be found
+     * on the learn site: http://learn.getgrav.org/plugins/event-hooks
+     *
+     * @param Event $e
+     */
+    public function onPageInitialized(Event $event)
+    {
+        $page = $event['page'];
+        $page->modifyHeader('external_url', $this->buildUrl($page));
     }
 
     /**
